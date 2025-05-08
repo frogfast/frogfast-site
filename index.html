@@ -1,77 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic Meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FROGFAST • $FROGF | The Fastest Frog on Solana</title>
-  <meta name="description" content="FROGFAST ($FROGF) – the jet‑powered meme frog on Solana. Flip fast or hop home." />
-  <meta name="keywords" content="frogfast, $FROGF, solana meme coin, fastest frog, pump.fun token" />
+  <title>FrogFast - $FROGF | The Fastest Frog on Solana</title>
+  <meta name="description" content="FrogFast ($FROGF) is the fastest frog on Solana. Flip fast or hop home." />
+  <meta name="keywords" content="frogfast, $FROGF, solana meme coin, solana frog, degen token, crypto meme, frog coin, Solana speed, jetpack frog" />
+  <meta name="author" content="FrogFast Team" />
   <link rel="icon" href="assets/favicon.png" />
-
-  <!-- TailwindCSS (utility styling) -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- AOS (scroll animations) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
   <style>
-    /* Neon frog → solana purple gradient for headings */
+    body {
+      background: linear-gradient(to bottom right, #00ffa3, #7f00ff);
+    }
     .gradient-text {
       background: linear-gradient(90deg, #00FF9E, #A44AFF);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       color: transparent;
     }
   </style>
 </head>
+<body class="text-white font-sans antialiased">
 
-<body class="text-white font-sans antialiased" style="background: linear-gradient(135deg, #00FFA3 0%, #7f00ff 100%)">
-  <!-- HERO -->
-  <header class="relative bg-top bg-cover min-h-[80vh]" style="background-image:url('assets/banner.jpg');">
+  <!-- Hero -->
+  <header class="relative bg-cover bg-center h-screen" style="background-image:url('assets/banner.jpg');">
     <div class="absolute inset-0 bg-black/60"></div>
-
-    <div class="relative container mx-auto h-full flex flex-col justify-center items-start px-6" data-aos="fade-up">
+    <div class="relative container mx-auto h-full flex flex-col justify-center items-start px-6">
       <img src="assets/logo.png" alt="Frogo Logo" class="w-24 mb-4" />
-      <!-- Emoji + ALL‑CAPS FROGFAST.XYZ -->
-      <h1 class="flex items-center text-5xl md:text-7xl font-bold mb-6">
-        <span class="text-6xl md:text-8xl mr-2">🐸</span>
-        <span class="gradient-text">FROGFAST</span><span class="text-white">.XYZ</span>
-      </h1>
+      <h1 class="text-5xl md:text-7xl font-bold mb-4 gradient-text">🐸 FROGFAST<span class="text-white">.XYZ</span></h1>
       <p class="text-xl md:text-2xl mb-6">The fastest frog on Solana. Flip fast or hop home.</p>
       <a href="https://pump.fun" target="_blank" class="px-8 py-4 bg-[#00FF9E] text-black font-bold rounded-lg hover:bg-green-500 transition">Buy $FROGF</a>
     </div>
   </header>
 
-  <!-- ABOUT -->
+  <!-- About -->
   <section id="about" class="py-16 container mx-auto px-6 bg-black" data-aos="fade-up">
     <h2 class="text-3xl font-semibold mb-4">Meet Frogo</h2>
-    <p class="mb-6">Frogo is the meme‑engineered frog from the future. He flips fast, dodges rugs, and lives on Solana speed. Hop into the movement and ride the jetpack of pure chaos.</p>
+    <p class="mb-6">Frogo is the meme-engineered frog from the future. He flips fast, dodges rugs, and lives on Solana speed. Hop into the movement and ride the jetpack of pure chaos.</p>
     <div class="w-full max-w-4xl mx-auto overflow-hidden rounded-lg">
-      <img src="assets/frogo-hero.png" alt="Frogo Racing" class="w-full object-contain" />
+      <img src="assets/frogo-hero.png" alt="Frogo Racing" class="w-full object-contain">
     </div>
   </section>
 
-  <!-- FROGO FORMS -->
-  <section class="py-16 container mx-auto px-6 text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold mb-10">Frogo Forms</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div>
-        <img src="assets/royal-frogo.png" alt="Royal Frogo" class="rounded-xl shadow-xl w-full mb-4" />
-        <p class="text-xl font-bold">Royal Frogo</p>
-      </div>
-      <div>
-        <img src="assets/rugproof-frogo.png" alt="Rugproof Frogo" class="rounded-xl shadow-xl w-full mb-4" />
-        <p class="text-xl font-bold">Rugproof Frogo</p>
-      </div>
-      <div>
-        <img src="assets/launch-mode-frogo.png" alt="Launch Mode Frogo" class="rounded-xl shadow-xl w-full mb-4" />
-        <p class="text-xl font-bold">Launch Mode Frogo</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FROGO MODES (illustration banner) -->
+  <!-- Frogo Modes -->
   <section id="modes" class="py-16 container mx-auto px-6 text-center bg-black" data-aos="fade-up">
     <h2 class="text-3xl font-semibold mb-10">Frogo Modes</h2>
     <div class="rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
@@ -79,7 +51,7 @@
     </div>
   </section>
 
-  <!-- TOKENOMICS -->
+  <!-- Tokenomics -->
   <section id="tokenomics" class="bg-[#0e0e1c] py-16" data-aos="fade-up">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-3xl font-semibold mb-8">Tokenomics</h2>
@@ -91,16 +63,15 @@
     </div>
   </section>
 
-  <!-- LIVE CHART -->
+  <!-- Live Chart -->
   <section id="chart" class="py-16 container mx-auto px-6" data-aos="fade-up">
     <h2 class="text-3xl font-semibold mb-4 text-center">Live Chart</h2>
     <div class="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
-      <!-- Replace PUT_CONTRACT_HERE when live -->
       <iframe src="https://birdeye.so/token/PUT_CONTRACT_HERE?chain=solana" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 
-  <!-- HOW TO BUY -->
+  <!-- How to Buy -->
   <section id="buy" class="bg-[#0e0e1c] py-16" data-aos="fade-up">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-semibold mb-4 text-center">How to Buy</h2>
@@ -108,12 +79,12 @@
         <li>Install and open your Phantom wallet extension.</li>
         <li>Click <strong>Swap</strong>, paste the $FROGF contract address.</li>
         <li>Enter the amount of SOL, set slippage to 0.5%.</li>
-        <li>Click <strong>Swap</strong> &amp; approve the transaction.</li>
+        <li>Click <strong>Swap</strong> & approve the transaction.</li>
       </ol>
     </div>
   </section>
 
-  <!-- COMMUNITY + SUBSCRIBE -->
+  <!-- Community -->
   <section id="community" class="py-16 container mx-auto px-6 text-center" data-aos="fade-up">
     <h2 class="text-3xl font-semibold mb-6">Join the Community</h2>
     <div class="flex justify-center gap-6 mb-6">
@@ -124,15 +95,24 @@
         <img src="assets/twitter-solana-gradient.svg" class="w-6" alt="Twitter" /> Twitter
       </a>
     </div>
-
-    <!-- Simple email subscribe form (Google Apps Script endpoint) -->
     <form action="https://script.google.com/macros/s/AKfycbwsl0EOJ26-aNfIb1Jxs2Z6OFs-wEes8u9BYApYAhC_FwrSav4qL1UTCPm61w5mUPV1/exec" method="POST" class="max-w-md mx-auto w-full px-4">
       <input type="email" name="email" placeholder="Enter your email" required class="w-full p-3 rounded-lg text-black mb-4" />
-      <button type="submit" class="w-full py-3 bg-[#00FF9E] text-black font-bold rounded-lg hover:bg-green-500 transition">Subscribe</button>
+      <button type="submit" class="w-full py-3 bg-[#00FF9E] text-black font-bold rounded-lg hover:bg-green-500 transition">
+        Subscribe
+      </button>
     </form>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="bg-[#0a0a14] py-8 text-center text-gray-500">
     <p>Built on Solana • © 2025 FrogFast</p>
-    <p><a href="
+    <p><a href="assets/FROGO_Brand_Kit.pdf" class="underline hover:text-white">Download Brand Kit (PDF)</a></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+</body>
+</html>
