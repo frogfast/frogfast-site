@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic Meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FROGFAST • $FROGF | The Fastest Frog on Solana</title>
-  <meta name="description" content="FROGFAST ($FROGF) – the jet-powered meme frog on Solana. Flip fast or hop home." />
-  <meta name="keywords" content="frogfast, $FROGF, solana meme coin, fastest frog, pump.fun token" />
-  <link rel="icon" href="assets/favicon.png" />
-
-  <!-- TailwindCSS -->
+  <title>FROGFAST • $FROGF</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- AOS (Animate On Scroll) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
   <style>
-    /* Gradient utility for headings */
     .gradient-text {
       background: linear-gradient(90deg, #00FF9E, #A44AFF);
       -webkit-background-clip: text;
@@ -24,32 +14,64 @@
     }
   </style>
 </head>
+<body class="bg-gradient-to-br from-[#00FFA3] to-[#7F00FF] text-white font-sans">
 
-<body class="text-white font-sans antialiased bg-gradient-to-br from-[#00FFA3] to-[#7F00FF]">
-  <!-- HERO -->
-  <header class="relative bg-cover bg-center min-h-screen" style="background-image:url('assets/banner.jpg');">
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative container mx-auto h-full flex flex-col justify-center items-start px-6" data-aos="fade-up">
-      <img src="assets/logo.png" alt="Frogo Logo" class="w-24 mb-4" />
-      <h1 class="flex items-center text-5xl md:text-7xl font-bold mb-6">
-        <span class="text-6xl md:text-8xl mr-2">🐸</span>
-        <span class="gradient-text">FROGFAST</span><span class="text-white">.XYZ</span>
-      </h1>
-      <p class="text-xl md:text-2xl mb-6">The fastest frog on Solana. Flip fast or hop home.</p>
-      <a href="https://pump.fun" target="_blank" class="px-8 py-4 bg-[#00FF9E] text-black font-bold rounded-lg hover:bg-green-500 transition">Buy $FROGF</a>
+  <header class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+    <img src="assets/logo.png" alt="Logo" class="w-24 mb-4" />
+    <h1 class="text-6xl font-bold gradient-text">FROGFAST.XYZ</h1>
+    <p class="text-xl mt-4">The fastest frog on Solana. Flip fast or hop home.</p>
+    <div class="mt-6 flex gap-4">
+      <a href="https://pump.fun" target="_blank" class="px-6 py-3 bg-[#00FF9E] text-black font-bold rounded">Buy $FROGF</a>
     </div>
+    <div class="flex flex-wrap gap-4 items-center my-6" id="walletButtons">
+      <button onclick="connectSpecificWallet('phantom')" class="p-2 rounded bg-white hover:bg-gray-200 transition">
+        <img src="https://raw.githubusercontent.com/solana-labs/wallet-adapter/main/packages/wallets/wallets/phantom/icon.png" alt="Phantom" class="w-10 h-10" />
+      </button>
+      <button onclick="connectSpecificWallet('solflare')" class="p-2 rounded bg-white hover:bg-gray-200 transition">
+        <img src="https://raw.githubusercontent.com/solana-labs/wallet-adapter/main/packages/wallets/wallets/solflare/icon.png" alt="Solflare" class="w-10 h-10" />
+      </button>
+      <button onclick="connectSpecificWallet('backpack')" class="p-2 rounded bg-white hover:bg-gray-200 transition">
+        <img src="https://raw.githubusercontent.com/solana-labs/wallet-adapter/main/packages/wallets/wallets/backpack/icon.png" alt="Backpack" class="w-10 h-10" />
+      </button>
+      <button onclick="connectSpecificWallet('slope')" class="p-2 rounded bg-white hover:bg-gray-200 transition">
+        <img src="https://raw.githubusercontent.com/solana-labs/wallet-adapter/main/packages/wallets/wallets/slope/icon.png" alt="Slope" class="w-10 h-10" />
+      </button>
+    </div>
+    <div id="walletStatus" class="text-white font-bold mt-4"></div>
   </header>
 
-  <!-- ABOUT -->
+  <script>
+    async function connectSpecificWallet(walletName) {
+      try {
+        if (!window.solana || typeof window.solana.connect !== 'function') {
+          alert("No Solana wallet found. Please install one of the supported wallets.");
+          return;
+        }
+
+        const provider = window.solana;
+        const resp = await provider.connect();
+        const shortAddr = resp.publicKey.toString().slice(0, 6) + '…';
+        const statusDiv = document.getElementById('walletStatus');
+        statusDiv.textContent = `Connected: ${shortAddr}`;
+      } catch (err) {
+        console.error('Connection error:', err);
+        alert("Failed to connect wallet. See console for details.");
+      }
+    }
+  </script>
+
   <section id="about" class="py-16 container mx-auto px-6 bg-black" data-aos="fade-up">
     <h2 class="text-3xl font-semibold mb-4">Meet Frogo</h2>
-    <p class="mb-6">Frogo is the meme-engineered frog from the future. He flips fast, dodges rugs, and lives on Solana speed. Hop into the movement and ride the jetpack of pure chaos.</p>
+    <p class="mb-6">
+      Frogo is the meme-engineered frog from the future. He flips fast,
+      dodges rugs, and lives on Solana speed. Hop into the movement and ride
+      the jetpack of pure chaos.
+    </p>
     <div class="w-full max-w-4xl mx-auto overflow-hidden rounded-lg">
       <img src="assets/frogo-hero.png" alt="Frogo Racing" class="w-full object-contain" />
     </div>
   </section>
 
-  <!-- FROGO FORMS (Character Variants with descriptions) -->
   <section class="py-16 container mx-auto px-6 text-center bg-black" data-aos="fade-up">
     <h2 class="text-3xl font-semibold mb-10">Frogo Forms</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -68,19 +90,26 @@
     </div>
   </section>
 
-  <!-- TOKENOMICS -->
   <section id="tokenomics" class="bg-[#0e0e1c] py-16" data-aos="fade-up">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-3xl font-semibold mb-8">Tokenomics</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div><h3 class="text-2xl font-bold mb-2">Supply</h3><p>1,000,000,000 $FROGF</p></div>
-        <div><h3 class="text-2xl font-bold mb-2">Taxes</h3><p>0% / 0%</p></div>
-        <div><h3 class="text-2xl font-bold mb-2">LP Lock</h3><p>30 Days</p></div>
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Supply</h3>
+          <p>1,000,000,000 $FROGF</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Taxes</h3>
+          <p>0% / 0%</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-2">LP Lock</h3>
+          <p>30 Days</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- LIVE CHART -->
   <section id="chart" class="py-16 container mx-auto px-6" data-aos="fade-up">
     <h2 class="text-3xl font-semibold mb-4 text-center">Live Chart</h2>
     <div class="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
@@ -88,7 +117,6 @@
     </div>
   </section>
 
-  <!-- HOW TO BUY -->
   <section id="buy" class="bg-[#0e0e1c] py-16" data-aos="fade-up">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-semibold mb-4 text-center">How to Buy</h2>
@@ -96,12 +124,11 @@
         <li>Install and open your Phantom wallet extension.</li>
         <li>Click <strong>Swap</strong>, paste the $FROGF contract address.</li>
         <li>Enter the amount of SOL, set slippage to 0.5%.</li>
-        <li>Click <strong>Swap</strong> &amp; approve the transaction.</li>
+        <li>Click <strong>Swap</strong> & approve the transaction.</li>
       </ol>
     </div>
   </section>
 
-  <!-- COMMUNITY + SUBSCRIBE -->
   <section id="community" class="py-16 container mx-auto px-6 text-center" data-aos="fade-up">
     <h2 class="text-3xl font-semibold mb-6">Join the Community</h2>
     <div class="flex justify-center gap-6 mb-6">
@@ -118,17 +145,9 @@
     </form>
   </section>
 
-  <!-- FOOTER -->
   <footer class="bg-[#0a0a14] py-8 text-center text-gray-500" data-aos="fade-up">
     <p>Built on Solana • © 2025 FrogFast</p>
     <p><a href="assets/FROGO_Brand_Kit.pdf" class="underline hover:text-white">Download Brand Kit (PDF)</a></p>
   </footer>
-
-  <!-- SCRIPTS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Initialize scroll animations
-    AOS.init({ duration: 800, once: true });
-  </script>
 </body>
 </html>
