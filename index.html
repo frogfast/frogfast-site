@@ -1,152 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FROGFAST • $FROGF</title>
-  <script src="/assets/js/tailwind.min.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrogFast - $FROGF | The Fastest Frog on Solana</title>
+  <link rel="icon" href="assets/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     .gradient-text {
       background: linear-gradient(90deg, #00FF9E, #A44AFF);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: transparent;
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-[#00FFA3] to-[#7F00FF] text-white font-sans">
-
-  <header class="min-h-screen flex flex-col justify-center items-center text-center px-4">
-    <img src="assets/logo.webp" alt="Logo" class="w-24 mb-4" />
-    <h1 class="text-6xl font-bold gradient-text">FROGFAST.XYZ</h1>
-    <p class="text-xl mt-4">The fastest frog on Solana. Flip fast or hop home.</p>
-    <div class="mt-6 flex gap-4">
-      <a href="https://pump.fun" target="_blank" class="px-6 py-3 bg-[#00FF9E] text-black font-bold rounded">Buy $FROGF</a>
+<body class="bg-[#1E1E2F] text-white font-sans antialiased">
+  <header class="relative bg-cover bg-center h-screen" style="background-image:url('assets/banner.jpg');">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative container mx-auto h-full flex flex-col justify-center items-start px-6" data-aos="fade-up">
+      <img src="assets/FrogFast_Official_Logo.png" alt="Frogo Logo" class="w-24 mb-4">
+      <h1 class="flex items-center leading-none text-5xl md:text-7xl font-bold mb-4">
+        <span class="mr-2 text-6xl md:text-8xl">🐸</span>
+        <span class="gradient-text">FROGFAST</span><span class="text-white">.XYZ</span>
+      </h1>
+      <p class="text-xl md:text-2xl mb-6">The fastest frog on Solana. Flip fast or hop home.</p>
+      <div class="flex flex-col md:flex-row gap-4">
+        <a href="https://pump.fun" target="_blank" class="px-8 py-4 bg-[#00FF9E] text-black font-bold rounded-lg hover:bg-green-500 transition">Buy $FROGF</a>
+        <select id="walletSelector" class="px-4 py-2 text-black rounded-lg">
+          <option value="phantom">Phantom</option>
+          <option value="solflare">Solflare</option>
+          <option value="backpack">Backpack</option>
+          <option value="glow">Glow</option>
+        </select>
+        <button id="connectWallet" class="px-8 py-4 bg-[#A44AFF] text-white font-bold rounded-lg hover:bg-purple-600 transition">Connect Wallet</button>
+      </div>
     </div>
-    <div class="flex flex-wrap gap-4 items-center my-6" id="walletButtons">
-      <button onclick="connectSpecificWallet('phantom')" class="p-2 rounded bg-white hover:bg-gray-200 transition">
-        <img src="https://raw.githubusercontent.com/solana-labs/wallet-adapter/main/packages/wallets/wallets/phantom/icon.png" alt="Phantom" class="w-10 h-10" />
-      </button>
-      <button onclick="connectSpecificWallet('solflare')" class="p-2 rounded bg-white hover:bg-gray-200 transition">
-        <img src="https://raw.githubusercontent.com/solana-labs/wallet-adapter/main/packages/wallets/wallets/solflare/icon.png" alt="Solflare" class="w-10 h-10" />
-      </button>
-      <button onclick="connectSpecificWallet('backpack')" class="p-2 rounded bg-white hover:bg-gray-200 transition">
-        <img src="https://raw.githubusercontent.com/solana-labs/wallet-adapter/main/packages/wallets/wallets/backpack/icon.png" alt="Backpack" class="w-10 h-10" />
-      </button>
-      <button onclick="connectSpecificWallet('slope')" class="p-2 rounded bg-white hover:bg-gray-200 transition">
-        <img src="https://raw.githubusercontent.com/solana-labs/wallet-adapter/main/packages/wallets/wallets/slope/icon.png" alt="Slope" class="w-10 h-10" />
-      </button>
-    </div>
-    <div id="walletStatus" class="text-white font-bold mt-4"></div>
   </header>
 
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-16 container mx-auto px-6" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold mb-4">Meet Frogo</h2>
+    <p class="mb-6">Frogo is the meme-engineered frog from the future. He flips fast, dodges rugs, and lives on Solana speed. Hop into the movement and ride the jetpack of pure chaos.</p>
+    <div class="w-full h-64 overflow-hidden rounded-lg">
+      <img src="assets/frogo-hero.png" alt="Frogo Racing" class="w-full h-full object-cover">
+    </div>
+  </section>
+
+  <!-- TOKENOMICS SECTION -->
+  <section id="tokenomics" class="bg-[#0e0e1c] py-16" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-semibold mb-8 text-center">Tokenomics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Supply</h3>
+          <p>1,000,000,000 $FROGF</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Taxes</h3>
+          <p>0% / 0%</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-2">LP Lock</h3>
+          <p>30&nbsp;Days</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE CHART SECTION -->
+  <section id="chart" class="py-16 container mx-auto px-6" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold mb-4 text-center">Live Chart</h2>
+    <div class="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+      <iframe src="https://dexscreener.com/solana/PUT_CONTRACT_HERE" class="w-full h-full" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <!-- HOW TO BUY SECTION -->
+  <section id="buy" class="bg-[#0e0e1c] py-16" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-semibold mb-4 text-center">How to Buy</h2>
+      <ol class="list-decimal list-inside space-y-2 max-w-md mx-auto text-left">
+        <li>Install and open your Phantom wallet extension.</li>
+        <li>Click <strong>Swap</strong>, paste the $FROGF contract address.</li>
+        <li>Enter the amount of SOL, set slippage to 0.5%.</li>
+        <li>Click <strong>Swap</strong> &amp; approve the transaction.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- COMMUNITY SECTION -->
+  <section id="community" class="py-16 container mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold mb-6">Join the Community</h2>
+    <div class="flex justify-center gap-6">
+      <a href="https://t.me/FrogFast" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-[#00A6FF] rounded-lg hover:bg-[#008ED1] transition">
+        <img src="assets/telegram.svg" class="w-6" alt="Telegram icon"> Telegram
+      </a>
+      <a href="https://x.com/frogfastcoin" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-[#1DA1F2] rounded-lg hover:bg-[#0d8de1] transition">
+        <img src="assets/twitter.svg" class="w-6" alt="Twitter icon"> Twitter
+      </a>
+    </div>
+  </section>
+
+  <footer class="bg-[#0a0a14] py-8 text-center text-gray-500">
+    <p>Built on Solana • © 2025 FrogFast</p>
+    <p>
+      <a href="assets/FROGO_Brand_Kit.pdf" class="underline hover:text-white">Download Brand Kit (PDF)</a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/@solana/web3.js@1.73.3/lib/index.iife.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@solana/wallet-adapter-wallets@0.11.12/dist/wallets.iife.js"></script>
   <script>
-    async function connectSpecificWallet(walletName) {
-      try {
-        if (!window.solana || typeof window.solana.connect !== 'function') {
-          alert("No Solana wallet found. Please install one of the supported wallets.");
-          return;
-        }
-        const provider = window.solana;
-        if (!provider) throw new Error('Wallet provider not found');
-        const resp = await provider.connect();
-        const shortAddr = resp.publicKey.toString().slice(0, 6) + '…';
-        const statusDiv = document.getElementById('walletStatus');
-        statusDiv.textContent = `Connected: ${shortAddr}`;
-      } catch (err) {
-        console.error('Connection error:', err);
-        alert("Failed to connect wallet. See console for details.");
-      }
+    AOS.init({ duration: 800, once: true });
+
+    const { PhantomWalletAdapter, SolflareWalletAdapter, BackpackWalletAdapter, GlowWalletAdapter } = window.walletAdapterWallets || {};
+
+    const wallets = {
+      phantom: PhantomWalletAdapter ? new PhantomWalletAdapter() : null,
+      solflare: SolflareWalletAdapter ? new SolflareWalletAdapter() : null,
+      backpack: BackpackWalletAdapter ? new BackpackWalletAdapter() : null,
+      glow: GlowWalletAdapter ? new GlowWalletAdapter() : null
+    };
+
+    // Auto-detect and prioritize Phantom if installed
+    if (window.solana?.isPhantom && wallets.phantom) {
+      selectedWallet = wallets.phantom;
+      document.getElementById('walletSelector').value = 'phantom';
+    } else {
+      selectedWallet = wallets.phantom; // fallback default
     }
+
+    document.getElementById('walletSelector').addEventListener('change', (e) => {
+      selectedWallet = wallets[e.target.value];
+    });
+
+    document.getElementById('connectWallet').addEventListener('click', async () => {
+      if (!selectedWallet) {
+        alert('Selected wallet adapter not available.');
+        return;
+      }
+      try {
+        await selectedWallet.connect();
+        const pubKey = selectedWallet.publicKey.toString();
+        document.getElementById('connectWallet').textContent = pubKey.slice(0, 6) + '…';
+      } catch (err) {
+        console.error('Connection failed', err);
+        alert('Failed to connect to selected wallet.');
+      }
+    });
   </script>
-<section id="about" class="py-16 container mx-auto px-6 bg-black" data-aos="fade-up">
-  <h2 class="text-3xl font-semibold mb-4">Meet Frogo</h2>
-  <p class="mb-6">
-    Frogo is the meme-engineered frog from the future. He flips fast,
-    dodges rugs, and lives on Solana speed. Hop into the movement and ride
-    the jetpack of pure chaos.
-  </p>
-  <div class="w-full max-w-4xl mx-auto overflow-hidden rounded-lg">
-    <img src="assets/frogo-hero.png" alt="Frogo Racing" class="w-full object-contain" />
-  </div>
-</section>
-
-<section class="py-16 container mx-auto px-6 text-center bg-black" data-aos="fade-up">
-  <h2 class="text-3xl font-semibold mb-10">Frogo Forms</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div>
-      <img src="assets/royal-frogo.png" alt="Royal Frogo variant" class="rounded-xl shadow-xl w-full mb-2" />
-      <p class="text-gray-300 text-sm">Regal and crowned – for those who lead the pack with high-tier hops.</p>
-    </div>
-    <div>
-      <img src="assets/rugproof-frogo.png" alt="Rugproof Frogo variant" class="rounded-xl shadow-xl w-full mb-4" />
-      <p class="text-gray-300 text-sm">Bulletproof and unshakable – built to survive the wildest market dips.</p>
-    </div>
-    <div>
-      <img src="assets/launch-mode-frogo.png" alt="Launch Mode Frogo variant" class="rounded-xl shadow-xl w-full mb-4" />
-      <p class="text-gray-300 text-sm">Jetpack engaged – for pre-listing hype that propels you to new heights.</p>
-    </div>
-  </div>
-</section>
-
-<section id="tokenomics" class="bg-[#0e0e1c] py-16" data-aos="fade-up">
-  <div class="container mx-auto px-6 text-center">
-    <h2 class="text-3xl font-semibold mb-8">Tokenomics</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div>
-        <h3 class="text-2xl font-bold mb-2">Supply</h3>
-        <p>1,000,000,000 $FROGF</p>
-      </div>
-      <div>
-        <h3 class="text-2xl font-bold mb-2">Taxes</h3>
-        <p>0% / 0%</p>
-      </div>
-      <div>
-        <h3 class="text-2xl font-bold mb-2">LP Lock</h3>
-        <p>30 Days</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="chart" class="py-16 container mx-auto px-6" data-aos="fade-up">
-  <h2 class="text-3xl font-semibold mb-4 text-center">Live Chart</h2>
-  <div class="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
-    <iframe src="https://birdeye.so/token/YOUR_CONTRACT_ADDRESS_HERE?chain=solana" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
-  </div>
-</section>
-
-<section id="buy" class="bg-[#0e0e1c] py-16" data-aos="fade-up">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl font-semibold mb-4 text-center">How to Buy</h2>
-    <ol class="list-decimal list-inside space-y-2 max-w-md mx-auto text-left">
-      <li>Install and open your Phantom wallet extension.</li>
-      <li>Click <strong>Swap</strong>, paste the $FROGF contract address.</li>
-      <li>Enter the amount of SOL, set slippage to 0.5%.</li>
-      <li>Click <strong>Swap</strong> & approve the transaction.</li>
-    </ol>
-  </div>
-</section>
-
-<section id="community" class="py-16 container mx-auto px-6 text-center" data-aos="fade-up">
-  <h2 class="text-3xl font-semibold mb-6">Join the Community</h2>
-  <div class="flex justify-center gap-6 mb-6">
-    <a href="https://t.me/FrogFast" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-[#00A6FF] rounded-lg hover:bg-[#008ED1] transition">
-      <img src="assets/telegram-solana-gradient.svg" class="w-6" alt="Telegram icon" /> Telegram
-    </a>
-    <a href="https://x.com/frogfastcoin" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-[#1DA1F2] rounded-lg hover:bg-[#0d8de1] transition">
-      <img src="assets/twitter-solana-gradient.svg" class="w-6" alt="Twitter icon" /> Twitter
-    </a>
-  </div>
-  <form action="https://script.google.com/macros/s/YOUR_SECURE_ENDPOINT/exec" method="POST" class="max-w-md mx-auto w-full px-4">
-    <input type="email" name="email" placeholder="Enter your email" required class="w-full p-3 rounded-lg text-black mb-4" />
-    <button type="submit" class="w-full py-3 bg-[#00FF9E] text-black font-bold rounded-lg hover:bg-green-500 transition">Subscribe</button>
-  </form>
-</section>
-
-<footer class="bg-[#0a0a14] py-8 text-center text-gray-500" data-aos="fade-up">
-  <p>Built on Solana • © 2025 FrogFast</p>
-  <p><a href="assets/FROGO_Brand_Kit.pdf" class="underline hover:text-white">Download Brand Kit (PDF)</a></p>
-</footer>
 </body>
 </html>
